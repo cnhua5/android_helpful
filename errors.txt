@@ -835,3 +835,32 @@ device/qcom/common/power/power.c:517:6: error: field designator 'getFeature' doe
 [122] ninja: error: rebuilding '/home/ubuntu/viper/out/combined-viper_lettuce.ninja':     '/home/ubuntu/viper/out/target/product/lettuce/kernel', needed by 'kernel', missing and no known rule to make it
 
    *compile your kernel first i.e define toolchain path for compiling 
+
+[123]
+   export LC_ALL=C
+
+1 warning generated.
+[ 81% 1300/1598] Lex: checkpolicy <= external/selinux/checkpolicy/policy_scan.l
+FAILED: /bin/bash -c "prebuilts/misc/linux-x86/flex/flex-2.5.39 -o/home/jyx/sdd/rom/Twrp_lineage/out/host/linux-        x86/obj/EXECUTABLES/checkpolicy_intermediates/policy_scan.c external/selinux/checkpolicy/policy_scan.l"
+flex-2.5.39: loadlocale.c:130: _nl_intern_locale_data: Assertion `cnt < (sizeof (_nl_value_type_LC_TIME) / sizeof (_nl_value_type_LC_TIME[0]))' failed.
+Aborted (core dumped)
+[ 81% 1300/1598] Lex: checkpolicy <= external/selinux/libsepol/cil/src/cil_lexer.l
+FAILED: /bin/bash -c "prebuilts/misc/linux-x86/flex/flex-2.5.39 -o/home/jyx/sdd/rom/Twrp_lineage/out/host/linux-x86/obj/STATIC_LIBRARIES/libsepol_intermediates/cil/src/cil_lexer.c external/selinux/libsepol/cil/src/cil_lexer.l"
+flex-2.5.39: loadlocale.c:130: _nl_intern_locale_data: Assertion `cnt < (sizeof (_nl_value_type_LC_TIME) / sizeof (_nl_value_type_LC_TIME[0]))' failed.
+Aborted (core dumped)
+[ 81% 1300/1598] Building Kernel
+make: Entering directory '/home/jyx/sdd/rom/Twrp_lineage/kernel/xiaomi/msm8996'
+make[1]: Entering directory '/home/jyx/sdd/rom/Twrp_lineage/out/target/product/gemini/obj/KERNEL_OBJ'
+
+[124]
+copy SettingsLib to target dir
+
+device/xiaomi/msm8996-common/configpanel/Android.mk:37: frameworks/base/packages/SettingsLib/common.mk: No such file or directory
+make: *** [build/core/ninja.mk:167: /home/jyx/sdd/rom/Twrp_lineage/out/build-lineage_gemini.ninja] Error 1
+make: Leaving directory '/home/jyx/sdd/rom/Twrp_lineage'
+
+[125]
+   build twrp recovery
+But if you decide to use CM, you’ll have to place TWRP in the CM/bootable/recovery-twrp folder, and set RECOVERY_VARIANT: =twrp in the BoardConfig.mk file   
+  
+ 
